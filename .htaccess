@@ -1,0 +1,14 @@
+Options -Indexes
+IndexIgnore *
+RewriteEngine On
+RewriteBase /
+
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^src/(.*)/$ resources/$1 [L]
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ self_mvc.php?page=$1 [QSA,L]
+
+
+RewriteRule !^(^resources/(.*)$|self_mvc.php) [NC,F]
