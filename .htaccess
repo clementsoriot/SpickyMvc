@@ -1,7 +1,7 @@
 Options -Indexes
 IndexIgnore *
 RewriteEngine On
-RewriteBase /
+RewriteBase /StrToWeb/StrToWeb/
 
 
 RewriteCond %{SCRIPT_FILENAME} !-f

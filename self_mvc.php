@@ -12,10 +12,12 @@ $PageDisponible['home'] = root.pre.'controller'.pre.'home.php';
 $PageDisponible['404'] = root.pre.'controller'.pre.'404.php';
 
 // Insert Dependances here:
+
 	require root.pre.'model'.pre.'metachanger.php';
-	$meta=new Dependances\Meta;
+	$meta=new Meta;
 
 	require root.pre.'model'.pre.'database.php';
+	$db1=new Database('localhost','root','','test');
 
 // Class Mvc :
 	require 'ClassMvc.php';

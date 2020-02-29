@@ -1,5 +1,4 @@
 <?php
-namespace Dependances;
 class Meta{
 
 	public function ChangeTitle($by){
