@@ -6,6 +6,7 @@ ob_start();
 // Constantes :
 define('root', __dir__);
 define('pre','/');
+define('siteurl','http://localhost/');
 
 $PageDisponible['home'] = root.pre.'controller'.pre.'home.php';
 
