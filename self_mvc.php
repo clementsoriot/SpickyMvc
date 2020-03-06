@@ -3,6 +3,7 @@ session_start();
 ob_start();
 // error_reporting(0);
 
+
 // Constantes :
 define('root', __dir__);
 define('pre','/');
