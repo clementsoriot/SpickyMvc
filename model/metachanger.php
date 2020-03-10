@@ -9,20 +9,20 @@ class Meta{
 	
 	public function ChangeSrc($by){
 		
-		if(!isset($GLOBALS['WordToReaplace']['<!--[+Src+]!-->'])):
-			$GLOBALS['WordToReaplace']['<!--[+Src+]!-->'] = $by;
+		if(!isset($GLOBALS['WordToReplace']['<!--[+Src+]!-->'])):
+			$GLOBALS['WordToReplace']['<!--[+Src+]!-->'] = $by;
 		else:
-			$GLOBALS['WordToReaplace']['<!--[+Src+]!-->'] .= $by;
+			$GLOBALS['WordToReplace']['<!--[+Src+]!-->'] .= $by;
 		endif;
 	
 	}
 	
 	public function ChangeMeta($by){
 		
-		if(!isset($GLOBALS['WordToReaplace']['<!--[+Src+]!-->'])):
-			$GLOBALS['WordToReaplace']['<!--[+Src+]!-->'] = $by;
+		if(!isset($GLOBALS['WordToReplace']['<!--[+Src+]!-->'])):
+			$GLOBALS['WordToReplace']['<!--[+Src+]!-->'] = $by;
 		else:
-			$GLOBALS['WordToReaplace']['<!--[+Src+]!-->'] .= $by;
+			$GLOBALS['WordToReplace']['<!--[+Src+]!-->'] .= $by;
 		endif;
 	
 	}
