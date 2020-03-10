@@ -25,7 +25,6 @@ $PageDisponible['404'] = root.pre.'controller'.pre.'404.php';
 	require 'ClassMvc.php';
 	$ClassMvc=new Systeme\mvc;
 	
-		require root.pre.'view/optimisation'.pre.'htmlstart.php';
 		
 	if($ClassMvc->RequireController):
 		require $ClassMvc->RequireController;
