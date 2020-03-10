@@ -38,9 +38,9 @@ $PageDisponible['404'] = root.pre.'controller'.pre.'404.php';
 
 $GetResultCode=ob_get_clean();
 
-if(isset($WordToReaplace)):
-	if(is_array($WordToReaplace)):
-		foreach($WordToReaplace as $Word => $To):
+if(isset($WordToReplace)):
+	if(is_array($WordToReplace)):
+		foreach($WordToReplace as $Word => $To):
 		
 			$GetResultCode=str_replace($Word, $To, $GetResultCode);
 			
