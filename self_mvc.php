@@ -4,36 +4,44 @@ ob_start();
 // error_reporting(0);
 // Credit to: Gaya & Valak & Spicky & PiouPiou
 // Constantes :
-define('root', __dir__);
-define('pre','/');
-define('siteurl','http://localhost/SpickyMvc');
-define('sitename','SpickyWebSite');
+
+if(file_exists(root.pre.'model'.pre.'add_instructions.php')):
+	require root.pre.'model'.pre.'add_instructions.php'; // Sera utile pour les plugins.
+endif;
+
+
+// Configurables options: //
+
+	define('root', __dir__);
+	define('pre','/');
+	define('siteurl','http://localhost/SpickyMvc');
+	define('sitename','SpickyWebSite');
+
+// End Configuration //
+
 
 $PageDisponible['home'] = root.pre.'controller'.pre.'home.php';
 $PageDisponible['404'] = root.pre.'controller'.pre.'404.php';
 
-// Insert Dependances here:
 
-	require root.pre.'model'.pre.'metachanger.php';
-	$meta=new Meta;
+// Insert your Dependances here
+require root.pre.'model'.pre.'metachanger.php';
+require root.pre.'model'.pre.'database.php';
+require 'ClassMvc.php';
 
-	require root.pre.'model'.pre.'database.php';
-	$db1=new Database('localhost','root','','test');
+$meta=new Meta;
+$db1=new Database('localhost','root','','test');
 
-// Class Mvc :
-	require 'ClassMvc.php';
-	$ClassMvc=new Systeme\mvc;
-	
-		
-	if($ClassMvc->RequireController):
-		require $ClassMvc->RequireController;
-	else:
-		require $ClassMvc->RequireController;
-	endif;
-		
+// Class Mvc 
+$ClassMvc=new Systeme\mvc;	
+require $ClassMvc->RequireController;
 
-
-
+/*****************************************************/
+/* Systeme de remplacement de mot :
+/* @ $WordToReplace['mot'] = 'Nouveau text';
+/* Dans une class:
+/* @ $GLOBALS['WordToReplace']['mot'] = 'Nouveau text';
+/*****************************************************/
 $GetResultCode=ob_get_clean();
 if(isset($WordToReplace)):
 	if(is_array($WordToReplace)):

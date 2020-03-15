@@ -1,7 +1,7 @@
 Options -Indexes
 IndexIgnore *
 RewriteEngine On
-RewriteBase /StrToWeb/StrToWeb/
+RewriteBase /SpickyMvc
 
 
 RewriteCond %{SCRIPT_FILENAME} !-f

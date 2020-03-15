@@ -3,7 +3,7 @@ class Meta{
 
 	public function ChangeTitle($by){
 
-		$GLOBALS['WordToReaplace']['<title></title>'] = '<title>'.$by.'</title>';
+		$GLOBALS['WordToReplace']['<title></title>'] = '<title>'.$by.'</title>';
 		
 	}
 	
