@@ -29,7 +29,7 @@ Class Database{
 
 	}
 
-	public function query($statement){
+	public function query($statement,$return=0){
 		try{
 			$req = $this->getPDO()->query($statement);
 			$data = $req->fetchALL(\PDO::FETCH_OBJ);
@@ -37,19 +37,34 @@ Class Database{
 		}
 		catch(PDOException $e)
 		{
+			if($return == 0):
+
 			return false;
 			
+			else:
+			
+			return $e;
+			
+			endif;
 		}
 	}
 	
-	public function execute($statement){
+	public function execute($statement,$return=0){
 		try{
 			$this->getPDO()->exec($statement);
 			return true;
 		}
 		catch(PDOException $e)
 		{
+			if($return == 0):
+
 			return false;
+			
+			else:
+			
+			return $e;
+			
+			endif;
 			
 		}
 	}
